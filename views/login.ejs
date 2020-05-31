@@ -1,0 +1,30 @@
+<%- include("./partials/header") %>
+
+<div class="container mt-2">
+    <header class="jumbotron">
+        <h1>Login</h1>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-sm" href="/campgrounds" role="button">Back to Campgrounds</a> <a class="btn btn-primary btn-sm" href="/" role="button">Back to Home Page</a>
+    </header>
+
+    <div class="w-50 mx-auto">
+
+        <form action="/login" method="POST">
+            <div class="container">
+
+                <div class="form-group">
+                    <input class="form-control form-control-md" type="text" name="username" placeholder="username">
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control form-control-md" type="password" name="password" placeholder="password">
+                </div>
+
+                <input type="submit" class="btn btn-primary btn-block btn-md w-50 mx-auto" value="Submit">
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<%- include("./partials/footer") %>

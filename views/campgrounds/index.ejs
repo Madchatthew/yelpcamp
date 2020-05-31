@@ -1,0 +1,35 @@
+<%- include("../partials/header") %>
+
+<div class="container mt-2">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Campgrounds</h1>
+            <p>View campsights from all over the world</p>
+            <hr class="my-4">
+            <p>
+                <a class="btn btn-primary btn-sm" href="/campgrounds/new" role="button">Enter a New Campground</a>
+                <a class="btn btn-primary btn-sm" href="/" role="button">Back to Home Page</a>
+
+            </p>
+        </div>
+    </header>
+
+<div class="d-flex justify-content-around flex-wrap">
+    <% campgrounds.forEach(function(campground) { %>
+        <div class="card mb-5" style="width: 18rem;">
+            <div class="h-75">
+                <img src="<%= campground.image %>" class="card-img-top h-100">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title text-center"><%= campground.name %></h5>
+                <!-- I haven't decided if I want the description in the card. -->
+                <!-- <p class="card-text text-center"><%= campground.description %></p> -->
+                <p class="card-text text-center"><a href="/campgrounds/<%= campground._id %>" class="btn btn-primary btn-sm">More Info</a></p>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+</div>
+
+<%- include("../partials/footer") %>
