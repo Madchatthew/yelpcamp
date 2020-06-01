@@ -18,7 +18,8 @@ var commentRoutes       = require('./routes/comments'),
     indexRoutes         = require('./routes/index')
 
 // Place Use/Set in this section
-mongoose.connect('mongodb://localhost/yelp_camp', {
+// mongoose.connect('mongodb://localhost/yelp_camp', {
+mongoose.connect('mongodb+srv://campyelp76:Mightymouse34@cluster0-mhqgn.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true
@@ -58,5 +59,5 @@ app.use('/campgrounds/:id/comments', commentRoutes)
 
 // Gives the server the port and how to access
 app.listen(3000, function() {
-    console.log("The Yelp Camp Server is Running on webdev:3000")
+    console.log("The Yelp Camp Server is Running on localhost:3000")
 })
