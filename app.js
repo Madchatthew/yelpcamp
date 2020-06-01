@@ -1,3 +1,8 @@
+//Sets up production or dev environment using .env
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
+
 // Sets up express and other global variables
 var express         = require('express'),
     app             = express(),
@@ -18,8 +23,7 @@ var commentRoutes       = require('./routes/comments'),
     indexRoutes         = require('./routes/index')
 
 // Place Use/Set in this section
-// mongoose.connect('mongodb://localhost/yelp_camp', {
-mongoose.connect('mongodb+srv://campyelp76:Mightymouse34@cluster0-mhqgn.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DATABASEURL, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true
