@@ -58,6 +58,6 @@ app.use('/campgrounds', campgroundRoutes)
 app.use('/campgrounds/:id/comments', commentRoutes)
 
 // Gives the server the port and how to access
-app.listen(3000, function() {
+app.listen(process.env.PORT || 5000, function() {
     console.log("The Yelp Camp Server is Running on localhost:3000")
 })
